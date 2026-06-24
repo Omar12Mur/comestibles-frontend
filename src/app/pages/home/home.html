@@ -1,1 +1,139 @@
-<p>home works!</p>
+<!-- ENVÍOS -->
+<div class="bg-dark text-white text-center py-2 fw-bold">
+  🚚 ENVÍOS GRATIS EN BOGOTÁ POR COMPRAS SUPERIORES A $100.000
+</div>
+
+
+<div class="container mt-4">
+
+
+<!-- Banner -->
+<div class="hero p-5 mb-5 rounded-4 shadow text-center">
+
+  <h1 class="fw-bold text-success">
+    Comestibles La Villa
+  </h1>
+
+  <p class="lead text-muted">
+    Frutos secos, semillas y productos seleccionados para ti.
+  </p>
+
+</div>
+
+
+
+<h2 class="text-center mb-4 fw-bold">
+Nuestros Productos
+</h2>
+
+
+
+<div *ngIf="errorMessage"
+class="alert alert-danger">
+
+{{errorMessage}}
+
+</div>
+
+
+
+<div class="row g-4">
+
+
+<div 
+class="col-12 col-sm-6 col-md-4 col-lg-3"
+*ngFor="let producto of productos; trackBy: trackProducto">
+
+
+
+<div class="card product-card h-100 shadow-sm">
+
+
+
+<!-- IMAGEN -->
+
+<img
+*ngIf="producto.image"
+[src]="'http://localhost:3000/images/'+producto.image"
+class="card-img-top product-img">
+
+
+
+<div class="card-body text-center">
+
+
+
+<span class="badge bg-success mb-2">
+
+{{producto.category}}
+
+</span>
+
+
+
+<h5 class="fw-bold">
+
+{{producto.name}}
+
+</h5>
+
+
+
+<p class="text-muted">
+
+{{producto.weight}}
+
+</p>
+
+
+
+<h3 class="text-success fw-bold">
+
+${{producto.price | number}}
+
+</h3>
+
+
+
+<button
+class="btn btn-dark w-100 rounded-pill"
+(click)="agregarAlCarrito(producto)">
+
+🛒 Añadir al carrito
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<footer class="mt-5 bg-dark text-white text-center p-4">
+
+
+<h5>
+Comestibles La Villa S.A.S
+</h5>
+
+
+<p class="small mb-0">
+Bogotá Colombia | Calidad garantizada
+</p>
+
+
+</footer>

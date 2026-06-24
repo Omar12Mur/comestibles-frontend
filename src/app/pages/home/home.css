@@ -1,0 +1,36 @@
+.hero{
+    background: linear-gradient(135deg,#f8fff8,#ffffff);
+}
+
+
+.product-card{
+    transition: .3s;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+
+.product-card:hover{
+    transform:translateY(-8px);
+}
+
+
+.product-img{
+
+    height:200px;
+    object-fit:cover;
+
+}
+
+
+
+.btn-dark{
+    transition:.2s;
+}
+
+
+.btn-dark:hover{
+
+    transform:scale(1.03);
+
+}
